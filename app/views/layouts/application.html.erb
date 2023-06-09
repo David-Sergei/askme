@@ -17,6 +17,7 @@
         <div>
           <% if current_user.present? %>
             <%= content_tag 'span', "@#{current_user.nickname}", class: 'mr-sm' %>
+            <%= link_to fa_icon('pencil'), edit_user_path(current_user), title: 'Редактировать учетную запись' %>
             <%= button_to 'Выйти', session_path, method: :delete %>
           <% else %>
             <%= link_to 'Регистрация', new_user_path, class: 'button button-yellow mr-sm' %>
